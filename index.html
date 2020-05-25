@@ -10,10 +10,13 @@
 			{{a}}
 		</div>
 		<script type="text/javascript">
-			var data = {a:1}
-			var vm = new Vue({el: "#app",data:data});
-			vm.a = "test";
-			data.a==vm.a;
+			var app = new Vue({
+				el:"#app",
+				data:{
+					a:"Hello Vue"
+				}
+			});
 		</script>
 	</body>
 </html>
+
