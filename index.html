@@ -6,6 +6,14 @@
 		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		
+		<div id="app">
+			{{a}}
+		</div>
+		<script type="text/javascript">
+			var data = {a:1}
+			var vm = new Vue({el: "#app",data:data});
+			vm.a = "test";
+			data.a==vm.a;
+		</script>
 	</body>
 </html>
