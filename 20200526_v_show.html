@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-show</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#pane{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div v-show="isShow" id="pane">
+				HelloVue
+			</div>
+			<!-- @为VUE独有绑定事件符号 -->
+			<button type="button" id="btn" @click="showPane">切换显示内容</button>
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					isShow:true
+				},
+				methods:{
+					showPane:function(e){
+						console.log(e)
+						if(this.isShow){
+							this.isShow = false;
+						}else{
+							this.isShow = true;
+						}
+					}
+				}
+			});
+			/*
+				v-if：只渲染一次
+				v-show:反复渲染
+			*/
+		</script>
+	</body>
+</html>
