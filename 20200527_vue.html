@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>列表渲染</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h3>明星列表</h3>
+			<ul>
+				<li v-for="item in stars">
+					{{item}}
+				</li>
+			</ul>
+			<h3>学生列表</h3>
+			<ul>
+				<li v-for="item in students">
+					<h4>{{item.name_s}}</h4>
+					<p>{{item.age}}</p>
+					<p>{{item.school}}</p>
+				</li>
+			</ul>
+			<h3>学生列表-带序号</h3>
+			<ul>
+				<li v-for="item,key in students">
+					<h4>{{key}}:{{item.name_s}}</h4>
+					<p>{{key}}:{{item.age}}</p>
+					<p>{{key}}:{{item.school}}</p>
+				</li>
+			</ul>
+			
+			<h3>循环对象</h3>
+			<ul>
+				<li>
+					
+				</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					stars:['皮卡丘','妙蛙种子'],
+					students:[
+						{
+							name_s:"xm",
+							age:11,
+							school:"清华"
+						},
+						{
+							name_s:"xh",
+							age:33,
+							school:"北大"
+						},
+						{
+							name_s:"xh",
+							age:22,
+							school:"扬大"
+						}
+					],
+					student
+				}
+			});
+		</script>
+	</body>
+</html>
